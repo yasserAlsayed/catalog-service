@@ -4,7 +4,6 @@ import com.polrbookshop.catalogservice.domain.Book;
 import com.polrbookshop.catalogservice.domain.BookService;
 import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
-import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 @RestController

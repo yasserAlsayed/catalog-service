@@ -2,8 +2,6 @@ package com.polrbookshop.catalogservice.domain;
 
 import org.springframework.stereotype.Service;
 
-import java.util.List;
-
 @Service
 public class BookService {
     private final BookRepository bookRepository;
