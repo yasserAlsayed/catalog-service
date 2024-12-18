@@ -1,4 +1,5 @@
 name: Commit Stage
+
 on: push
 
 jobs:
@@ -21,15 +22,12 @@ jobs:
         run: |
           chmod +x gradlew
           ./gradlew build
-      - name: Code vulnerability scanning
-        uses: anchore/scan-action@v3
-        id: scan
+      - name: Initialize CodeQL
+        uses: github/codeql-action/init@v3
         with:
-          path: "${{ github.workspace }}"
-          fail-build: false
-          severity-cutoff: high
+          languages: java
+      - name: Analyze with CodeQL
+        uses: github/codeql-action/analyze@v3
       - name: Upload vulnerability report
         uses: github/codeql-action/upload-sarif@v3
-        if: success() || failure()
-        with:
-          sarif_file: ${{ steps.scan.outputs.sarif }}
+        if: always()
