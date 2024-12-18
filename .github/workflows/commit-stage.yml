@@ -30,4 +30,6 @@ jobs:
         uses: github/codeql-action/analyze@v3
       - name: Upload vulnerability report
         uses: github/codeql-action/upload-sarif@v3
+        with:
+          sarif_file: ./codeql-results/my_project/java/my_project.sarif
         if: always()
