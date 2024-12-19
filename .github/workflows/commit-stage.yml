@@ -43,4 +43,5 @@ jobs:
         uses: github/codeql-action/upload-sarif@v3
         if: success() || failure()
         with:
-           sarif_file: ${{ steps.scan.outputs.sarif }}
+#           sarif_file: ${{ steps.scan.outputs.sarif }}
+           sarif_file: /home/runner/work/catalog-service/catalog-service/results.sarif
